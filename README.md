@@ -144,6 +144,4 @@ http://<yourNodeRedInstance.mybluemix.net>/ui
 3. Build the project Ctlr-B
 4. Run the project in the simulator for iPhone 7
 
- <img src="images/iphoneAppTab1.jpeg" width="140">
- <img src="images/iphoneAppTab2.jpeg" width="140">
- <img src="images/iphoneAppTab3.jpeg" width="140">
+ <img src="images/iphoneAppTab1.jpeg" width="140"> <img src="images/iphoneAppTab2.jpeg" width="140"> <img src="images/iphoneAppTab3.jpeg" width="140">
