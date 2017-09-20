@@ -126,16 +126,17 @@ Import RaspberryPiFlow.txt
 3. Modify all IoT node with your device information from your IoT Bluemix
 4. Deploy your flow
 5. Access the dashboard:
+
+In a new browser tab go to:
 ```
-In a new browser tab go to
 http://<yourNodeRedInstance.mybluemix.net>/ui
 ```
 
-![NodeRedDashboardTab1](images/NodeRedDashboardTab1.jpeg)
+<img src="images/NodeRedDashboardTab1.jpeg" width="600">
 
-![NodeRedDashboardTab2](images/NodeRedDashboardTab2.jpeg)
+<img src="images/NodeRedDashboardTab2.jpeg" width="600">
 
-![NodeRedDashboardTab3](images/NodeRedDashboardTab3.jpeg)
+<img src="images/NodeRedDashboardTab3.jpeg" width="600">
 
 #### 3. iPhone application
 1. Download xcode project
@@ -143,8 +144,6 @@ http://<yourNodeRedInstance.mybluemix.net>/ui
 3. Build the project Ctlr-B
 4. Run the project in the simulator for iPhone 7
 
-![iphoneAppTab1](images/iphoneAppTab1.jpeg)
-
-![iphoneAppTab2](images/iphoneAppTab2.jpeg)
-
-![iphoneAppTab3](images/iphoneAppTab3.jpeg)
+ <img src="images/iphoneAppTab1.jpeg" width="140">
+ <img src="images/iphoneAppTab2.jpeg" width="140">
+ <img src="images/iphoneAppTab3.jpeg" width="140">
