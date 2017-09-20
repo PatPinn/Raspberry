@@ -74,18 +74,18 @@ http://<raspberry Pi IP Address>:1880/
 
 ![Db2 Warehouse](images/DB2_Catalog.jpeg)
 
-1. To get started, find the myWorkshop-Db2 service in your Bluemix dashboard and click on it to
+2. To get started, find the myWorkshop-Db2 service in your Bluemix dashboard and click on it to
 launch the service.
-2. Like the IoT Platform service, this will land you on the “Service Details” page of your Db2
+3. Like the IoT Platform service, this will land you on the “Service Details” page of your Db2
 Warehouse on Cloud service where you should click .
 Note: The Db2 Warehouse on Cloud service should then launch in a separate browser window or
 tab leaving the Service Details tab open as well. Keep this tab open as it will make returning to the
 Bluemix dashboard much easier.
-3. In order to create a new table from here, you need to select Explore.
-4. From there you will be presented a list of database schemas. You should click on the one
+4. In order to create a new table from here, you need to select Explore.
+5. From there you will be presented a list of database schemas. You should click on the one
 beginning with DASH (for example: ) and then click on .
-5. Name your new table: SENSEDATA
-6. Replace the text in the box with the following. Each line represents one column of the table along
+6. Name your new table: SENSEDATA
+7. Replace the text in the box with the following. Each line represents one column of the table along
 with its type:
 
 | name | type|
