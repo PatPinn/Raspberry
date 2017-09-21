@@ -106,11 +106,11 @@ Login in your Bluemix account, go to catalog and create a new IoT Starter.
 ![Internet of Things Platform](images/Node-Red_Catalog.jpeg)
 
 1. On the resulting page, you need to give your application a name. You can name your application anything you like provided it is unique in the Bluemix space. At this point, your application will be created and, after a few moments, you will be taken to the Getting Started page for your application.
-4. You now need to create connections to your IoT, Watson text to Speech, Watson translate and Db2 Warehouse on Cloud services. Go to the Connections section of your application page (listed on the menu to the left). There, as a part of the Node-RED Starter boilerplate, you will see that a Cloudant NoSQL database service has been
+2. You now need to create connections to your IoT, Watson text to Speech, Watson translate and Db2 Warehouse on Cloud services. Go to the Connections section of your application page (listed on the menu to the left). There, as a part of the Node-RED Starter boilerplate, you will see that a Cloudant NoSQL database service has been
 created automatically. The Cloudant NoSQL database holds all of your application code. Here, is where you will add the connections to your two additional services.
-5. Click on , select your IoT Platform service from the list of existing services that you are presented, and then click.
-6. Select Cancel in response to the restaging request that pops up.
-7. Repeat steps 5 & 6 for your Watson text to Speech, Watson translate and Db2 Warehouse on Cloud service. For the last one (DB2), select Restage in response to the restaging request.
+3. Click on , select your IoT Platform service from the list of existing services that you are presented, and then click.
+4. Select Cancel in response to the restaging request that pops up.
+5. Repeat steps 5 & 6 for your Watson text to Speech, Watson translate and Db2 Warehouse on Cloud service. For the last one (DB2), select Restage in response to the restaging request.
 
 
 ###### 2.4.1 Bluemix Node-Red Flow
@@ -121,6 +121,7 @@ Password: _________________
 ```
 Note: Do not forget these values or you will lose all of your work on this application as you will have
 no choice but to start over.
+
 2. Install dashboard pallette
 Import RaspberryPiFlow.txt
 3. Modify all IoT node with your device information from your IoT Bluemix
@@ -138,10 +139,24 @@ http://<yourNodeRedInstance.mybluemix.net>/ui
 
 <img src="images/NodeRedDashboardTab3.jpeg" width="600">
 
-#### 3. iPhone application
+###### 2.4.2 Test your Rest API
+
+1. access the 4 Rest API URL in your favorite browser 
+```
+http://<yourNodeRedInstance.mybluemix.net>/envData?
+http://<yourNodeRedInstance.mybluemix.net>/tempsData?
+http://<yourNodeRedInstance.mybluemix.net>/humidityData?
+http://<yourNodeRedInstance.mybluemix.net>/raspData?
+```
+
+#### 3. iPhone application (Beta version)
 1. Download xcode project
 2. Open RaspSenseHat.xcworkspace in the RaspSenseHat folder
 3. Build the project Ctlr-B
 4. Run the project in the simulator for iPhone 7
+5. go to setup to ch=hange the URL with your Node-Red Instance 
+```
+http://<yourNodeRedInstance.mybluemix.net>
+```
 
  <img src="images/iphoneAppTab1.jpeg" width="140"> <img src="images/iphoneAppTab2.jpeg" width="140"> <img src="images/iphoneAppTab3.jpeg" width="140">
