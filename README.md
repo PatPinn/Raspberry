@@ -74,10 +74,10 @@ http://<raspberry Pi IP Address>:1880/
 
 ![Db2 Warehouse](images/DB2_Catalog.jpeg)
 
-2. To get started, find the myWorkshop-Db2 service in your Bluemix dashboard and click on it to
+2. To get started, find the  your Db2 service in your Bluemix dashboard and click on it to
 launch the service.
 3. Like the IoT Platform service, this will land you on the “Service Details” page of your Db2
-Warehouse on Cloud service where you should click .
+Warehouse on Cloud service where you should click Open.
 Note: The Db2 Warehouse on Cloud service should then launch in a separate browser window or
 tab leaving the Service Details tab open as well. Keep this tab open as it will make returning to the
 Bluemix dashboard much easier.
@@ -88,13 +88,13 @@ beginning with DASH (for example: ) and then click on .
 7. Replace the text in the box with the following. Each line represents one column of the table along
 with its type:
 
-| name | type|
-| -------- | ---------- |
-| SENSORID | VARCHAR(20)|
-| TEMPERATURE | DOUBLE |
-| HUMIDITY | DOUBLE |
-| PRESSURE | DOUBLE |
-| TIMESENT | TIMESTAMP |
+```
+ SENSORID  VARCHAR(20)
+ TEMPERATURE  DOUBLE 
+ HUMIDITY  DOUBLE 
+ PRESSURE  DOUBLE 
+ TIMESENT  TIMESTAMP 
+```
 
 Note: The name of this table and the names of the rows will be an important element of later
 workshops so be sure to double check your spelling.
@@ -108,13 +108,13 @@ Login in your Bluemix account, go to catalog and create a new IoT Starter.
 1. On the resulting page, you need to give your application a name. You can name your application anything you like provided it is unique in the Bluemix space. At this point, your application will be created and, after a few moments, you will be taken to the Getting Started page for your application.
 2. You now need to create connections to your IoT, Watson text to Speech, Watson translate and Db2 Warehouse on Cloud services. Go to the Connections section of your application page (listed on the menu to the left). There, as a part of the Node-RED Starter boilerplate, you will see that a Cloudant NoSQL database service has been
 created automatically. The Cloudant NoSQL database holds all of your application code. Here, is where you will add the connections to your two additional services.
-3. Click on , select your IoT Platform service from the list of existing services that you are presented, and then click.
+3. Click on Connect to Existing, select your IoT Platform service from the list of existing services that you are presented, and then click Connect.
 4. Select Cancel in response to the restaging request that pops up.
-5. Repeat steps 5 & 6 for your Watson text to Speech, Watson translate and Db2 Warehouse on Cloud service. For the last one (DB2), select Restage in response to the restaging request.
+5. Repeat steps 3 & 5 for your Watson text to Speech, Watson translate and Db2 Warehouse on Cloud service. For the last one (DB2), select Restage in response to the restaging request.
 
 
 ###### 2.4.1 Bluemix Node-Red Flow
-1. The first time that you start the Node-RED environment, you will be presented with a Welcome wizard. Use the Next button to progress through the wizard. You will be asked to set a Username and Password that will help to secure your Node-RED space. You can choose to bypass this, but you really should add the Username and Password. Be sure to remember them, otherwise you will lose all of your work in the editor. While not normally good practice, make a note of them here:
+1. The first time that you start the Node-RED environment, you will be presented with a Welcome wizard. Use the Next button to progress through the wizard. You will be asked to set a Username and Password that will help to secure your Node-RED space. You can choose to bypass this, but you really should add the Username and Password. Be sure to remember them, otherwise you will lose all of your work in the editor. While not normally good practice, __make a note of them__:
 ```
 Username: _________________
 Password: _________________
@@ -122,11 +122,14 @@ Password: _________________
 Note: Do not forget these values or you will lose all of your work on this application as you will have
 no choice but to start over.
 
-2. Install dashboard pallette
-Import RaspberryPiFlow.txt
-3. Modify all IoT node with your device information from your IoT Bluemix
-4. Deploy your flow
-5. Access the dashboard:
+2. Click on "Go to your Node-RED flow editor"
+3. Go to Manage Pallette and install the node-red-dashboard pallette
+3. Open RaspberryNodeRedFlows.txt form NodeRed Flows of this GitHub
+4. Copy the content of the file
+4. Go back to your Node-RED and Import the content from the Clipboard 
+4. Modify all IoT node with your device information from your IoT Bluemix
+5. Deploy your flow
+6. Access the dashboard:
 
 In a new browser tab go to:
 ```
