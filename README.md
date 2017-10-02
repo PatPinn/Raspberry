@@ -1,6 +1,6 @@
 # Raspberry
 ### Bluemix and Raspberry Pi
-*version 1.0, September 2017*
+*version 1.1, October 2017*
 
 This is sample application to demonstrate IoT capability with the use of IBM Bluemix platfrom:
 * IoT Platform
@@ -9,7 +9,9 @@ This is sample application to demonstrate IoT capability with the use of IBM Blu
 * Watson Language Translator
 * Watson Text to speech
 * API Connect *(in the next version)*
-* iPhone application
+* iPhone application *(Beta version)*
+
+__*This sample application documentation configuration assumes you have good knowledge of Bluemix service and Raspberry Pi.__
 
 ### Prerequisites:
 
@@ -45,13 +47,17 @@ you want to stop Node-RED, you need to issue the command: node-red-stop.
 http://<raspberry Pi IP Address>:1880/
 ```
 
-7. Import RaspberryPiFlow.txt
-8. Modify all IoT node with your device information from your IoT Bluemix
-9. deploy your flow
+7. Open RaspberryPiFlow.txt form NodeRed Flows of this GitHub
+8. Copy the content of the file
+9. Go back to your Node-RED and Import the content from the Clipboard 
+10. Modify all IoT node with your device information from your IoT Bluemix
+11. deploy your flow
 
 #### 2. Bluemix Services
 
 ##### 2.1 Bluemix IoT
+We will create an IoT service to connect the Raspberry Pi to a Node-RED instance.
+
 1. Login in your Bluemix account, go to catalog and create a new IoT service.
 
 ![Internet of Things Platform](images/IoT_Catalog.jpeg)
@@ -60,16 +66,22 @@ http://<raspberry Pi IP Address>:1880/
 3. Add a new gateway device using the newly defined PiGateway device type.  Make a note of the following items from the summary page as you will need them later when you actually connect your device to the IoT Platform service: __(Organization ID, Device Type, Device ID, Token)__
 
 ##### 2.2 Bluemix Watson Text to Speech
+We will create Watson Text to Speech service to be use in the Node-RED instance dashboard.
+
 1. Login in your Bluemix account, go to catalog and create a new Watson Text to Speech service.
 
 ![Watson Text to Speech](images/WT2S_Catalog.jpeg)
 
 ##### 2.3 Bluemix Watson Language Translator
+We will create Watson Language Translator service to be use in the Node-RED instance dashboard.
+
 1. Login in your Bluemix account, go to catalog and create a new Watson Language Translator service.
 
 ![Watson Language Translator](images/WLT_Catalog.jpeg)
 
 ##### 2.4 Bluemix Db2 Warehouse
+We will create Watson Db2 Warehouse service to save environment datas.
+
 1. Login in your Bluemix account, go to catalog and create a new Db2 Warehouse service.
 
 ![Db2 Warehouse](images/DB2_Catalog.jpeg)
@@ -101,16 +113,18 @@ workshops so be sure to double check your spelling.
 
 ##### 2.4 Bluemix Node-Red
 ###### 2.4.1 creation & configuration
-Login in your Bluemix account, go to catalog and create a new IoT Starter.
+
+
+1. Login in your Bluemix account, go to catalog and create a new IoT Starter.
 
 ![Internet of Things Platform](images/Node-Red_Catalog.jpeg)
 
-1. On the resulting page, you need to give your application a name. You can name your application anything you like provided it is unique in the Bluemix space. At this point, your application will be created and, after a few moments, you will be taken to the Getting Started page for your application.
-2. You now need to create connections to your IoT, Watson text to Speech, Watson translate and Db2 Warehouse on Cloud services. Go to the Connections section of your application page (listed on the menu to the left). There, as a part of the Node-RED Starter boilerplate, you will see that a Cloudant NoSQL database service has been
+2. On the resulting page, you need to give your application a name. You can name your application anything you like provided it is unique in the Bluemix space. At this point, your application will be created and, after a few moments, you will be taken to the Getting Started page for your application.
+3. You now need to create connections to your IoT, Watson text to Speech, Watson translate and Db2 Warehouse on Cloud services. Go to the Connections section of your application page (listed on the menu to the left). There, as a part of the Node-RED Starter boilerplate, you will see that a Cloudant NoSQL database service has been
 created automatically. The Cloudant NoSQL database holds all of your application code. Here, is where you will add the connections to your two additional services.
-3. Click on Connect to Existing, select your IoT Platform service from the list of existing services that you are presented, and then click Connect.
-4. Select Cancel in response to the restaging request that pops up.
-5. Repeat steps 3 & 5 for your Watson text to Speech, Watson translate and Db2 Warehouse on Cloud service. For the last one (DB2), select Restage in response to the restaging request.
+4. Click on Connect to Existing, select your IoT Platform service from the list of existing services that you are presented, and then click Connect.
+5. Select Cancel in response to the restaging request that pops up.
+6. Repeat steps 3 & 5 for your Watson text to Speech, Watson translate and Db2 Warehouse on Cloud service. For the last one (DB2), select Restage in response to the restaging request.
 
 
 ###### 2.4.1 Bluemix Node-Red Flow
@@ -124,12 +138,12 @@ no choice but to start over.
 
 2. Click on "Go to your Node-RED flow editor"
 3. Go to Manage Pallette and install the node-red-dashboard pallette
-3. Open RaspberryNodeRedFlows.txt form NodeRed Flows of this GitHub
-4. Copy the content of the file
-4. Go back to your Node-RED and Import the content from the Clipboard 
-4. Modify all IoT node with your device information from your IoT Bluemix
-5. Deploy your flow
-6. Access the dashboard:
+4. Open RaspberryNodeRedFlows.txt form NodeRed Flows of this GitHub
+5. Copy the content of the file
+6. Go back to your Node-RED and Import the content from the Clipboard 
+7. Modify all IoT node with your device information from your IoT Bluemix
+8. Deploy your flow
+9. Access the dashboard:
 
 In a new browser tab go to:
 ```
