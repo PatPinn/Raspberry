@@ -2,6 +2,12 @@
 ### Bluemix and Raspberry Pi
 *version 1.1, October 2017*
 
+This documentation is guideline to configure and use this application. 
+
+__*This sample application documentation configuration assumes you have good knowledge of Bluemix service and Raspberry Pi.__
+
+__This is not a training step by step__
+
 This is sample application to demonstrate IoT capability with the use of IBM Bluemix platfrom:
 * IoT Platform
 * Node-Red
@@ -11,7 +17,6 @@ This is sample application to demonstrate IoT capability with the use of IBM Blu
 * API Connect *(in the next version)*
 * iPhone application *(Beta version)*
 
-__*This sample application documentation configuration assumes you have good knowledge of Bluemix service and Raspberry Pi.__
 
 ### Prerequisites:
 
@@ -20,7 +25,19 @@ __*This sample application documentation configuration assumes you have good kno
 * You must be able to connect to your Raspberry Pi on a network and you need to know it’s ip address.
 * You should have an SSH terminal program for connecting to the Raspberry Pi. If you are using a MacOS or Linux system, you are ready. If you are using a Windows system, install the PuTTY application, which is available at http://www.putty.org Software installer.
 
-#### 1. Raspberry PI
+#### 1. Bluemix Services
+
+##### 1.1 Bluemix IoT
+We will create an IoT service to connect the Raspberry Pi to a Node-RED instance.
+
+1. Login in your Bluemix account, go to catalog and create a new IoT service.
+
+![Internet of Things Platform](images/IoT_Catalog.jpeg)
+
+2. In your newly created IoT Platform service, define a new __gateway device__ type called PiGateway.
+3. Add a new __gateway device__ using the newly defined PiGateway device type.  Make a note of the following items from the summary page as you will need them later when you actually connect your device to the IoT Platform service: __(Organization ID, Device Type, Device ID, Token)__
+
+#### 2. Raspberry PI
 In this sample you will use a Raspberry Pi and a Sense HAT to send data to a Node-Red Bluemix Instance. The Raspberry Pi running Raspbian Operating System. Raspbian include a Node-Red runtime instance. You will use this Node-Red to connect the Raspberry Pi to the Bluemix IoT Platform.
 * [Raspbian download](https://www.raspberrypi.org/downloads/raspbian/)
 
@@ -51,35 +68,27 @@ http://<raspberry Pi IP Address>:1880/
 8. Copy the content of the file
 9. Go back to your Node-RED and Import the content from the Clipboard 
 10. Modify all IoT node with your device information from your IoT Bluemix
+<img src="images/IoT_configNodeRedRasp1.jpeg" width="200">
+<img src="images/IoT_configNodeRedRasp2.jpeg" width="200">
 11. deploy your flow
 
-#### 2. Bluemix Services
+#### 3. Bluemix Services
 
-##### 2.1 Bluemix IoT
-We will create an IoT service to connect the Raspberry Pi to a Node-RED instance.
-
-1. Login in your Bluemix account, go to catalog and create a new IoT service.
-
-![Internet of Things Platform](images/IoT_Catalog.jpeg)
-
-2. In your newly created IoT Platform service, define a new gateway device type called PiGateway.
-3. Add a new gateway device using the newly defined PiGateway device type.  Make a note of the following items from the summary page as you will need them later when you actually connect your device to the IoT Platform service: __(Organization ID, Device Type, Device ID, Token)__
-
-##### 2.2 Bluemix Watson Text to Speech
+##### 3.1 Bluemix Watson Text to Speech
 We will create Watson Text to Speech service to be use in the Node-RED instance dashboard.
 
 1. Login in your Bluemix account, go to catalog and create a new Watson Text to Speech service.
 
 ![Watson Text to Speech](images/WT2S_Catalog.jpeg)
 
-##### 2.3 Bluemix Watson Language Translator
+##### 3.2 Bluemix Watson Language Translator
 We will create Watson Language Translator service to be use in the Node-RED instance dashboard.
 
 1. Login in your Bluemix account, go to catalog and create a new Watson Language Translator service.
 
 ![Watson Language Translator](images/WLT_Catalog.jpeg)
 
-##### 2.4 Bluemix Db2 Warehouse
+##### 3.3 Bluemix Db2 Warehouse
 We will create Watson Db2 Warehouse service to save environment datas.
 
 1. Login in your Bluemix account, go to catalog and create a new Db2 Warehouse service.
@@ -111,8 +120,8 @@ with its type:
 Note: The name of this table and the names of the rows will be an important element of later
 workshops so be sure to double check your spelling.
 
-##### 2.4 Bluemix Node-Red
-###### 2.4.1 creation & configuration
+##### 3.4 Bluemix Node-Red
+###### 3.4.1 creation & configuration
 
 
 1. Login in your Bluemix account, go to catalog and create a new IoT Starter.
@@ -127,7 +136,7 @@ created automatically. The Cloudant NoSQL database holds all of your application
 6. Repeat steps 3 & 5 for your Watson text to Speech, Watson translate and Db2 Warehouse on Cloud service. For the last one (DB2), select Restage in response to the restaging request.
 
 
-###### 2.4.1 Bluemix Node-Red Flow
+###### 3.4.1 Bluemix Node-Red Flow
 1. The first time that you start the Node-RED environment, you will be presented with a Welcome wizard. Use the Next button to progress through the wizard. You will be asked to set a Username and Password that will help to secure your Node-RED space. You can choose to bypass this, but you really should add the Username and Password. Be sure to remember them, otherwise you will lose all of your work in the editor. While not normally good practice, __make a note of them__:
 ```
 Username: _________________
@@ -156,7 +165,7 @@ http://<yourNodeRedInstance.mybluemix.net>/ui
 
 <img src="images/NodeRedDashboardTab3.jpeg" width="600">
 
-###### 2.4.2 Test your Rest API
+###### 3.4.2 Test your Rest API
 
 1. access the 4 Rest API URL in your favorite browser 
 ```
@@ -166,7 +175,7 @@ http://<yourNodeRedInstance.mybluemix.net>/humidityData?
 http://<yourNodeRedInstance.mybluemix.net>/raspData?
 ```
 
-#### 3. iPhone application (Beta version)
+#### 4. iPhone application (Beta version)
 1. Download xcode project
 2. Open RaspSenseHat.xcworkspace in the RaspSenseHat folder
 3. Build the project Ctlr-B
