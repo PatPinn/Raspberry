@@ -67,10 +67,17 @@ http://<raspberry Pi IP Address>:1880/
 7. Open RaspberryPiFlow.txt form NodeRed Flows of this GitHub
 8. Copy the content of the file
 9. Go back to your Node-RED and Import the content from the Clipboard 
-10. Modify all IoT node with your device information from your IoT Bluemix
-<img src="images/IoT_configNodeRedRasp1.jpeg" width="200">
-<img src="images/IoT_configNodeRedRasp2.jpeg" width="200">
-11. deploy your flow
+10. Open the configuration of one IoT node:
+<img src="images/IoT_configNodeRedRasp1.jpeg" _width="200">
+11. Click on the pen to modify the credentials
+<img src="images/IoT_configNodeRedRasp2.jpeg" _width="200">
+12. Enter all your IoT Gateway information __(Organization ID, Device Type, Device ID, Token)__ and rename the credential to create a new one
+<img src="images/IoT_configNodeRedRasp3.jpeg" _width="200">
+13. Uodate this crendantial and go back to the IoT node configuration
+<img src="images/IoT_configNodeRedRasp2.jpeg" _width="200">
+14. Modify the device Id by device name you want. (This will create the senseHat device in your IoT foundation)
+15. Modify __all the IoT nodes in all flow__. You will select the new cerdential you created and the new device name your decide.
+16. deploy your flow
 
 #### 3. Bluemix Services
 
